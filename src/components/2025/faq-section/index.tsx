@@ -113,7 +113,7 @@ const FaqSection: React.FC = () => {
                 </p>
                 {item.id === "item-11" && (
                   <p className="mt-2">
-                    You can reach out to the ETHAccra's team on
+                    You can reach out to the ETHAccra&apos;s team on
                     {" "}
                     <a className="text-orange-500 underline" href="https://t.me/+7ClMFsYpii05NGQ0" target="_blank" rel="noopener noreferrer">Telegram</a>,
                     {" "}
