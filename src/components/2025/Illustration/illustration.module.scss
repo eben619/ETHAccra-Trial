@@ -1,171 +1,183 @@
+// Fireflies Container
 .firefliesContainer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 5;
-    overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+  transform: translateZ(0); // Force hardware acceleration
+  contain: strict; // Improve performance
+}
+
+// Base Firefly Style
+.firefly {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 100, 0.7);
+  box-shadow: 
+    0 0 5px 2px rgba(255, 255, 0, 0.5),
+    0 0 20px 10px rgba(255, 165, 0, 0.2);
+  opacity: 0.5;
+  transform: translate(-50%, -50%) translateZ(0);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  perspective: 1000px;
+  animation: 
+    firefly-movement 10s linear infinite, 
+    firefly-flicker 4s ease-in-out infinite;
+  animation-delay: calc(var(--firefly-id) * 0.1s);
+}
+
+// Alternate animation patterns
+.firefly:nth-child(3n) {
+  animation: 
+    firefly-movement-alt 12s linear infinite, 
+    firefly-flicker 3s ease-in-out infinite;
+  animation-delay: calc(var(--firefly-id) * 0.15s);
+}
+
+.firefly:nth-child(3n+1) {
+  animation: 
+    firefly-movement-alt2 15s linear infinite, 
+    firefly-flicker 6s ease-in-out infinite;
+  animation-delay: calc(var(--firefly-id) * 0.2s);
+}
+
+// Animation Keyframes
+@keyframes firefly-movement {
+  0% {
+    transform: translate(0, 0) translateZ(0);
+    opacity: 0.5;
   }
-  
-  .firefly {
-    position: absolute;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 100, 0.7);
-    box-shadow: 
-      0 0 5px 2px rgba(255, 255, 0, 0.5),
-      0 0 20px 10px rgba(255, 165, 0, 0.2);
-    opacity: 0;
-    transform: translate(-50%, -50%);
-    animation: firefly-movement 10s linear infinite, firefly-flicker 4s ease-in-out infinite;
+  10% {
+    opacity: 1;
   }
-  
-  /* Different movement patterns for variety */
-  .firefly:nth-child(3n) {
-    animation: firefly-movement-alt 12s linear infinite, firefly-flicker 3s ease-in-out infinite;
+  90% {
+    opacity: 1;
   }
-  
-  .firefly:nth-child(3n+1) {
-    animation: firefly-movement-alt2 15s linear infinite, firefly-flicker 6s ease-in-out infinite;
+  100% {
+    transform: translate(100px, -100px) translateZ(0);
+    opacity: 0.5;
   }
-  
-  /* Random movement animation */
-  @keyframes firefly-movement {
-    0% {
-      transform: translate(0, 0);
-      opacity: 0;
-    }
-    10% {
-      opacity: 1;
-    }
-    90% {
-      opacity: 1;
-    }
-    100% {
-      transform: translate(100px, -100px);
-      opacity: 0;
-    }
+}
+
+@keyframes firefly-movement-alt {
+  0% {
+    transform: translate(0, 0) translateZ(0);
+    opacity: 0.5;
   }
-  
-  @keyframes firefly-movement-alt {
-    0% {
-      transform: translate(0, 0);
-      opacity: 0;
-    }
-    10% {
-      opacity: 1;
-    }
-    90% {
-      opacity: 1;
-    }
-    100% {
-      transform: translate(-150px, 100px);
-      opacity: 0;
-    }
+  10% {
+    opacity: 1;
   }
-  
-  @keyframes firefly-movement-alt2 {
-    0% {
-      transform: translate(0, 0);
-      opacity: 0;
-    }
-    10% {
-      opacity: 1;
-    }
-    90% {
-      opacity: 1;
-    }
-    100% {
-      transform: translate(200px, 50px);
-      opacity: 0;
-    }
+  90% {
+    opacity: 1;
   }
-  
-  /* Flickering animation */
-  @keyframes firefly-flicker {
-    0%, 100% {
-      opacity: 0.2;
+  100% {
+    transform: translate(-150px, 100px) translateZ(0);
+    opacity: 0.5;
+  }
+}
+
+@keyframes firefly-movement-alt2 {
+  0% {
+    transform: translate(0, 0) translateZ(0);
+    opacity: 0.5;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(200px, 50px) translateZ(0);
+    opacity: 0.5;
+  }
+}
+
+@keyframes firefly-flicker {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+// Existing hero styles (unchanged)
+$largestScreen: 3000px;
+
+.heroContainer {
+    @apply px-4 pt-[calc(128px_+_112px)]
+    md:min-h-[95vh] md:items-center
+    lg:pt-[calc(166px_+_50px)] 
+    lg:pl-20 lg:pr-10
+    lg:h-auto lg:min-h-[95vh]
+    lg:flex lg:items-start
+    2xl:gap-[56px]
+    ;
+
+    @media screen and (min-width: 1024px) {
+        @apply md:min-h-[auto];
+    } 
+    @media screen and (min-width: $largestScreen) {
+        @apply items-center justify-center min-h-[auto];
     }
-    50% {
-      opacity: 1;
+
+    & .heroLeftContainer {
+        @apply lg:mt-[57px] lg:w-7/12;
+
+        & .largeHeading {
+            background: linear-gradient(180deg, #FFE178 0%, #FFA500 100%);
+            @apply opacity-35;
+            @apply bg-clip-text text-transparent
+            text-center 
+            lg:text-left
+            xl:text-[152px] font-[800] xl:leading-[158px]
+            text-[5rem] leading-[96px]
+            font-gilroy;
+        }
+        
+        @media (max-width: 393px) {
+            & .largeHeading {
+                @apply text-[4rem];
+            }
+        }
+        
+        @media (max-width: 311px) {
+            & .largeHeading {
+                @apply text-[3rem];
+            }
+        }
+        
+        @media (max-width: 241px) {
+            & .largeHeading {
+                @apply text-[2rem];
+            }
+        }
+        
+        & .dateText {
+            @apply text-[#2A2A2A] xl:text-[32px] font-semibold lg:leading-[125%] xl:text-left
+            text-[28px] leading-[114.286%] text-center lg:text-left;
+        }
+        
+        & .descriptionText {
+            @apply text-[#2A2A2A] lg:text-[24px] font-medium lg:leading-[133.333%] lg:text-left
+            text-[20px] leading-[120%] text-center;
+        }
     }
-  }
-  
-  /* Include your existing hero styles */
-  $largestScreen: 3000px;
-  
-  .heroContainer {
-      @apply px-4 pt-[calc(128px_+_112px)]
-      md:min-h-[95vh] md:items-center
-      lg:pt-[calc(166px_+_50px)] 
-      lg:pl-20 lg:pr-10
-      lg:h-auto lg:min-h-[95vh]
-      lg:flex lg:items-start
-      2xl:gap-[56px]
-      ;
-  
-      @media screen and (min-width: 1024px) {
-          @apply md:min-h-[auto];
-      } 
-      @media screen and (min-width: $largestScreen) {
-          @apply items-center justify-center min-h-[auto];
-      }
-  
-      & .heroLeftContainer {
-          @apply lg:mt-[57px] lg:w-7/12;
-  
-          & .largeHeading {
-              background: linear-gradient(180deg, #FFE178 0%, #FFA500 100%);
-              @apply opacity-35;
-              @apply bg-clip-text text-transparent
-              text-center 
-              lg:text-left
-              xl:text-[152px] font-[800] xl:leading-[158px]
-              text-[5rem] leading-[96px]
-              font-gilroy;
-          }
-          
-          @media (max-width: 393px) {
-              & .largeHeading {
-                  @apply text-[4rem];
-              }
-          }
-          
-          @media (max-width: 311px) {
-              & .largeHeading {
-                  @apply text-[3rem];
-              }
-          }
-          
-          @media (max-width: 241px) {
-              & .largeHeading {
-                  @apply text-[2rem];
-              }
-          }
-          
-          & .dateText {
-              @apply text-[#2A2A2A] xl:text-[32px] font-semibold lg:leading-[125%] xl:text-left
-              text-[28px] leading-[114.286%] text-center lg:text-left;
-          }
-          
-          & .descriptionText {
-              @apply text-[#2A2A2A] lg:text-[24px] font-medium lg:leading-[133.333%] lg:text-left
-              text-[20px] leading-[120%] text-center;
-          }
-      }
-  
-  
-      & .heroRightContainer {
-          @apply lg:w-6/12 lg:mt-[34px] md:items-end lg:items-start h-full;
-      }
-  }
-  
-  
-  .heroButton {
-      @apply inline-flex items-center justify-center rounded-[32px]
-      text-center text-[16px] font-bold leading-[125%] 
-      px-6 py-2 h-[52px] w-full lg:w-auto
-      bg-[#FFA500] text-white hover:bg-transparent hover:border hover:border-[#FFA500] hover:text-[#FFA500];
-      @apply opacity-30 pointer-events-none;
-  }
+
+    & .heroRightContainer {
+        @apply lg:w-6/12 lg:mt-[34px] md:items-end lg:items-start h-full;
+    }
+}
+
+.heroButton {
+    @apply inline-flex items-center justify-center rounded-[32px]
+    text-center text-[16px] font-bold leading-[125%] 
+    px-6 py-2 h-[52px] w-full lg:w-auto
+    bg-[#FFA500] text-white hover:bg-transparent hover:border hover:border-[#FFA500] hover:text-[#FFA500];
+    @apply opacity-30 pointer-events-none;
+}
