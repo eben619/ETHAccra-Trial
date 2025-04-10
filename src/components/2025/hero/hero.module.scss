@@ -1,0 +1,55 @@
+.heroContainer {
+  @apply px-4 py-12 flex items-center justify-start min-h-[95vh] w-full;
+}
+
+.heroLeftContainer {
+  @apply flex flex-col justify-start items-start pl-4 md:pl-8 lg:pl-16 xl:pl-24;
+}
+
+.heroContentContainer {
+  @apply flex flex-col items-start text-left max-w-4xl;
+  padding-top: 116px;
+}
+
+.dateText {
+  @apply text-[#2A2A2A] xl:text-[40px] font-medium lg:leading-[140%] text-[26px] leading-[140%];
+}
+
+.descriptionText {
+  @apply text-[#2A2A2A] text-[36px] sm:text-[48px] lg:text-[64px] font-bold lg:leading-[120%] leading-[130%];
+}
+
+.buttonContainer {
+  @apply flex justify-start mt-8;
+}
+
+.heroButton {
+  @apply inline-flex items-center justify-center rounded-[16px] text-center text-[18px] font-bold leading-[125%]
+    px-6 py-3 text-white hover:bg-[#fafafa] hover:border hover:text-[#fc74c2];
+  background-color: #fc74c2;
+  border: 1px solid transparent;
+}
+
+/* ✅ Mobile styles */
+@media (max-width: 768px) {
+  .heroContentContainer {
+    @apply items-center text-center px-4;
+    padding-top: 80px;
+  }
+
+  .descriptionText {
+    @apply text-[32px] font-extrabold leading-tight;
+  }
+
+  .dateText {
+    @apply text-[22px] font-bold mt-2;
+  }
+
+  .buttonContainer {
+    @apply justify-center mt-6;
+  }
+
+  .heroLeftContainer {
+    @apply pl-0 w-full;
+  }
+}

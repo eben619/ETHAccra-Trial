@@ -1,0 +1,174 @@
+/* nav container */
+.navContainer {
+  @apply flex justify-between rounded-[0px_0px_32px_32px] border-b border-white bg-[#FCFCFC] py-6 lg:px-10
+    px-4 h-[112px] lg:h-[116px] z-20;
+  transition: left right 0.2s ease-in-out;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  &.isAbsolute {
+    @apply absolute left-0 right-0;
+  }
+  &.isSticky {
+    @apply fixed left-0 right-0;
+  }
+
+  & .navFooterImageLinks {
+    transition: all 0.3s;
+    &:hover {
+      color: white;
+      & svg {
+        @apply fill-[#FFA500] text-white;
+        & path {
+          @apply fill-[#FFA500];
+        }
+      }
+    }
+  }
+
+  & .navbarLink {
+    @apply inline-flex rounded-[32px] h-[52px] lg:h-auto lg:min-h-[52px];
+
+    &.primaryLink {
+      @apply items-center
+            bg-[#FFA500] text-white px-4 py-3;
+      &:hover {
+        background: linear-gradient(180deg, #ffc150 0%, #ea9700 100%);
+      }
+    }
+
+    &.secondaryLink {
+      @apply items-center justify-center 
+            px-6 py-2 w-full md:w-auto
+            text-center text-[16px] font-bold leading-[125%] 
+            border border-[#FFA500] text-[#FFA500] 
+          hover:bg-[#FFA500] hover:text-white hover:border-none;
+    }
+
+    &.tertiaryLink {
+      @apply items-center 
+            px-4 py-3
+            bg-white text-black border border-black 
+            hover:border hover:border-[#FFA500] hover:text-[#FFA500];
+    }
+  }
+}
+
+/* collapse navbar section */
+
+.collapseNavBarSection {
+  @apply rounded-[0px_0px_32px_32px] border-b border-white bg-[#FCFCFC] shadow-[0px_2px_8px_0px_rgba(0,0,0,0.10)]
+    flex flex-col justify-start
+    fixed inset-0 z-50 
+    lg:px-10 lg:py-6 px-4 py-6
+    min-h-screen lg:h-screen overflow-auto;
+  // justify-between
+
+  & .hamburgerMenuContainer {
+    @apply relative z-10 rounded-[32px] bg-black p-3 flex items-center justify-center gap-2.5;
+  }
+
+  &.active {
+    @apply opacity-10;
+  }
+
+  &.inActive {
+    @apply opacity-0;
+    animation: opacityL 1s ease-in-out;
+  }
+
+  @keyframes opacityL {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  & .navLinks {
+    @apply block text-black text-center font-gilroy text-[32px] font-[800] leading-[125%];
+  }
+
+  & .quickButtonsContainer {
+    @apply flex flex-col items-center justify-center lg:flex-row gap-6
+        max-w-[232px] md:max-w-none md:w-full;
+  }
+
+  & .socialMediaButtonsContainer {
+    @apply mt-8 flex flex-col items-center justify-center lg:flex-row gap-6 lg:gap-16;
+  }
+
+  & .reachOutToSocialMediaText {
+    @apply text-[#3F3F3F] text-center text-[16px] font-semibold leading-[150%];
+  }
+
+  & .navFooterImageLinks {
+    transition: all 0.3s;
+    &:hover {
+      color: white;
+      & svg {
+        @apply fill-[#FFA500] text-white;
+        & path {
+          @apply fill-[#FFA500];
+        }
+      }
+    }
+  }
+
+  & .collapsedNavBarLink {
+    @apply inline-flex rounded-[32px] h-[56px] lg:h-auto lg:min-h-[52px];
+
+    &.primaryLink {
+      @apply items-center justify-center
+            px-4 py-3
+            w-full md:w-auto
+            bg-[#FFA500] text-white;
+
+      &:hover {
+        background: linear-gradient(180deg, #ffc150 0%, #ea9700 100%);
+      }
+    }
+
+    &.secondaryLink {
+      @apply items-center justify-center
+            px-6 py-2
+            w-full md:w-auto 
+            text-center text-[16px] font-bold leading-[125%] 
+            border border-[#FFA500] text-[#FFA500] 
+            hover:bg-[#FFA500] hover:text-white hover:border-none;
+    }
+
+    &.tertiaryLink {
+      @apply items-center justify-center 
+            w-full md:w-auto 
+            bg-white text-black border border-black 
+            px-4 py-3
+            hover:bg-[#FFA500] hover:text-white hover:border-none;
+    }
+  }
+}
+
+.anchorLinks {
+  @apply text-[#373737] text-center font-semibold leading-[120%];
+  @apply text-[20px];
+  // @apply text-base;
+  transition: all;
+  &:hover {
+    @apply hover:text-[#FFA500];
+  }
+}
+
+.ethAccraNavText {
+  @apply text-[#252525] text-[32px] font-[800] leading-[112.5%] lg:block
+    hidden font-altoneBold;
+}
+
+.ethAccraHackathonNavText {
+  @apply text-[#F5C303] text-[20px] font-bold leading-normal lg:inline-block
+    hidden font-altoneBold;
+}
+
+.hamburgerMenuCover {
+  @apply rounded-[32px] bg-black p-3 gap-2.5;
+}

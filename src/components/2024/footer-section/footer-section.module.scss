@@ -1,0 +1,85 @@
+
+.footerSectionContainer {
+    @apply relative bg-white p-4 md:p-0 lg:pt-44 overflow-hidden;
+
+    & .footerCommunityText {
+        @apply text-[#3F3F3F] text-center lg:text-[24px] lg:font-normal lg:leading-[166.667%] text-[20px] leading-[160%] font-medium;
+    }
+
+    & .footerEthIconSection {
+        @apply relative mb-[26px];
+
+        & .footerEthIconImageContainer {
+            @apply flex justify-center relative z-10 mx-auto max-w-[233.966px] max-h-[240px];
+        }
+
+        & .footerCloud1ImageContainer {
+            @apply absolute top-[-5%] right-[-3%] lg:right-[-15%];
+        }
+
+        & .footerCloud2ImageContainer {
+            @apply absolute top-[50%] left-0 lg:top-[30%] lg:left-[-23%];
+        }
+
+        & .footerCloud3ImageContainer {
+            @apply absolute bottom-0 right-[-20%] lg:top-[70%] lg:right-[5%];
+        }
+    }
+
+    & .footerImageLinks {
+        transition: fill 0.3s;
+        &:hover {
+            color: white;
+            & svg {
+                @apply fill-[#FFA500];
+                &  path {
+                    @apply fill-[#FFA500];
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+.quickLinksContainer {
+    @apply max-w-[1068px] mx-auto mt-12 lg:flex lg:items-center lg:justify-between border-t border-[#D4D4D4];
+
+    & .quickLinksLayout {
+        @apply flex justify-between items-center mt-6 mb-[63px] lg:mt-8 lg:mb-[54px] lg:gap-20;
+    }
+
+    & .allRightsReservedText {
+        @apply text-[#3F3F3F] lg:text-center text-[16px] font-semibold leading-[150%];
+    }
+
+    & .quickLinksText {
+        @apply text-[#3F3F3F] text-center text-[16px] font-semibold leading-[150%];
+    }
+}
+
+.applyAsAHackerButton {
+    @apply bg-[#FFA500] text-white px-4 py-3 h-[52px] 
+    inline-flex items-center justify-center rounded-[32px]
+    w-full md:w-auto;
+    
+    &:hover {
+        background: linear-gradient(180deg, #FFC150 0%, #EA9700 100%);
+    }
+}
+
+.applyAsAMentorButton {
+    @apply bg-transparent text-black border border-black px-4 py-3 h-[52px]
+    inline-flex items-center justify-center rounded-[32px]
+    w-full md:w-auto
+    hover:bg-[#FFA500] hover:text-white hover:border-none;
+}
+
+.applyAsASponsorButton {
+    @apply inline-flex items-center justify-center rounded-[32px] 
+    border border-[#FFA500] text-[#FFA500] 
+    text-center text-[16px] font-bold leading-[125%] 
+    px-6 py-2 h-[52px] w-full md:w-auto hover:bg-[#FFA500] hover:text-white hover:border-none;
+}

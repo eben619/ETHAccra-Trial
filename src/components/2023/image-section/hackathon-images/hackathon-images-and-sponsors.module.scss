@@ -1,0 +1,16 @@
+
+.headingText {
+  @apply font-altoneBold text-[44px] font-bold text-center;
+  @apply lg:leading-[27.58px];
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+.hackathonImagesRow {
+  @apply flex flex-col md:flex-row gap-6 md:gap-0 flex-wrap md:-m-3;
+}
+
+.imagesRow {
+  @apply mx-auto flex flex-col justify-center md:flex-row md:flex-wrap md:items-stretch md:justify-center gap-6 md:gap-0 md:-mx-3;
+}
+

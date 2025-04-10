@@ -1,0 +1,104 @@
+.accordionWrapper{
+    @apply w-full;
+    @apply flex flex-col;
+
+    &[data-variant="2023"]{
+        @apply border-none;
+        @apply gap-y-7;
+    }
+
+    &[data-variant="2024"]{
+        @apply border-[#DADADA] border-b;
+    }
+}
+
+.accordionHeader {
+    @apply flex items-center justify-between;
+    @apply w-full;
+ 
+    &[data-variant="2023"]{
+        @apply gap-2;
+        @apply py-5 pr-7 lg:px-7;
+        @apply bg-[#F7F9FB];
+        @apply text-left text-black;
+        @apply font-medium;
+        @apply text-xl leading-7 lg:text-[1.75rem] lg:leading-[2.45rem];
+        @apply rounded-[0.625rem];
+    }
+
+    &[data-variant="2024"]{
+        @apply py-4 gap-4;
+        @apply text-left text-black text-[1.5rem] font-medium leading-[133.333%];
+    }
+
+    & .accordionIcon {
+        @apply flex items-center justify-center;
+
+        &[data-variant="2023"]{
+            @apply bg-transparent rounded-none p-0;
+            & > svg {
+                fill: currentColor;
+                & > path {
+                    stroke: #111111;
+                }
+            }
+        }
+
+        &[data-variant="2024"]{
+            @apply rounded-[16px] bg-[#F3EABF] p-3;
+            & > svg {
+                fill: currentColor;
+                & > path {
+                    stroke: #FFA500;
+                }
+            }
+        }
+    }
+
+    &:hover > .accordionIcon {
+        &[data-variant="2023"]{
+            & > svg {
+                fill: #111111;
+                & > path {}
+            }
+        }
+
+        &[data-variant="2024"]{
+            & > svg {
+                fill: #FFA500;
+                & > path {}
+            }
+        }
+    }
+}
+
+.accordionContent {
+    @apply transition-all;
+
+    &[data-variant="2023"]{
+        @apply text-black text-[1.25rem] font-normal leading-[160%];
+        @apply lg:px-7;
+    }
+
+    &[data-variant="2024"]{
+        @apply text-black text-[1.25rem] font-normal leading-[160%];
+    }
+
+    &.active {
+        @apply flex;
+        @apply overflow-auto;
+
+        &[data-variant="2023"]{
+            @apply pb-7;
+        }
+
+        &[data-variant="2024"]{
+            @apply pb-7;
+        }
+    }
+
+    &.inActive {
+        @apply pb-0 h-0;
+        @apply overflow-hidden;
+    }
+}

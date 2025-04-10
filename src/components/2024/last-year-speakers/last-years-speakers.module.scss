@@ -1,0 +1,45 @@
+.sectionContainer {
+    @apply px-7 pt-16 pb-[84px] lg:px-10 lg:pb-[95px] 
+    bg-[url('/assets/svgs/speakers/2023_speakers_bg.svg')] lg:bg-[url('/assets/svgs/speakers/2023_speakers_bg_mobile.svg')]
+    bg-no-repeat bg-cover;
+}
+
+
+.speakerLayout {
+    // @apply flex flex-col md:grid md:grid-cols-3 lg:md:grid-cols-4 gap-3;
+    // @apply md:flex -my-3 md:flex-wrap md:items-center justify-center md:-m-3;
+    @apply md:flex md:flex-wrap md:items-stretch h-full justify-center;
+
+    .item {
+        // @apply w-full h-full;
+        // @apply w-full h-full md:w-4/12 lg:w-3/12 md:p-3 py-3;
+        @apply w-full h-auto md:w-4/12 lg:w-3/12 md:p-3 py-3;
+    }
+
+    .card {
+        @apply rounded-[0px_0px_4px_4px] bg-white h-full;
+    
+        .imageContainer {
+            @apply overflow-hidden cursor-pointer;
+    
+            &:hover img {
+                transform: none;
+                @apply transition-all;
+            }
+        }
+    
+        & .imageStyles {
+            @apply w-full h-full min-w-full min-h-full object-contain;
+            @apply rounded-[0px_0px_4px_4px];
+        }
+    
+        & .nameText{
+            @apply text-[#333] text-[24px] font-semibold leading-[133.333%];
+        }
+    
+        & .affiliationText{
+            @apply text-[#333] text-left text-[16px] font-normal leading-[125%] mt-0.5;
+        }
+    }
+}
+

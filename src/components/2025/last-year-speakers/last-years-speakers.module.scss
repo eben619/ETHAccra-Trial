@@ -1,0 +1,39 @@
+.sectionContainer {
+    @apply px-7 pt-16 pb-[84px] lg:px-10 lg:pb-[95px];
+    background-color: #f5ebda; /* Solid background color */
+  }
+  
+  .speakerLayout {
+    @apply md:flex md:flex-wrap md:items-stretch h-full justify-center;
+  
+    .item {
+      @apply w-full h-auto md:w-4/12 lg:w-3/12 md:p-3 py-3;
+    }
+  
+    .card {
+      @apply rounded-[0px_0px_4px_4px] bg-white h-full;
+  
+      .imageContainer {
+        @apply overflow-hidden cursor-pointer;
+  
+        &:hover img {
+          transform: none;
+          @apply transition-all;
+        }
+      }
+  
+      & .imageStyles {
+        @apply w-full h-full min-w-full min-h-full object-contain;
+        @apply rounded-[0px_0px_4px_4px];
+      }
+  
+      & .nameText {
+        @apply text-[#333] text-[24px] font-semibold leading-[133.333%];
+      }
+  
+      & .affiliationText {
+        @apply text-[#333] text-left text-[16px] font-normal leading-[125%] mt-0.5;
+      }
+    }
+  }
+  

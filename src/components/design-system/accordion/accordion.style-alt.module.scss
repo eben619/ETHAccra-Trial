@@ -1,0 +1,39 @@
+.accordionWrapper{
+    @apply border-[#DADADA] border-b block w-full;
+}
+
+.accordionHeader {
+    @apply flex items-center justify-between py-4 w-full text-left gap-4
+    text-black text-[24px] font-medium leading-[133.333%];
+
+    & .accordionIcon {
+        @apply rounded-[16px] bg-[#F3EABF] p-3 flex items-center justify-center;
+        & > svg {
+            fill: currentColor;
+            & > path {
+                stroke: #FFA500;
+            }
+        }
+    }
+
+    &:hover > .accordionIcon {
+        // @apply hover:bg-[#FFA500] hover:text-white;
+
+        & > svg {
+            fill: #FFA500;
+            & > path {
+                // stroke: white;
+            }
+        }
+    }
+}
+
+.accordionContent {
+    @apply text-black text-[20px] font-normal leading-[160%] transition-all;
+    &.active {
+        @apply pb-7 overflow-auto flex;
+    }
+    &.inActive {
+        @apply pb-0 h-0 overflow-hidden;
+    }
+}

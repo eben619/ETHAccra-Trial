@@ -1,0 +1,8 @@
+.headingText {
+    @apply font-altoneBold font-bold text-center;
+    @apply text-[2.25rem] lg:text-[2.75rem];
+    @apply leading-[3.15rem] lg:leading-[1.7238rem];
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+

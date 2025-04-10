@@ -1,0 +1,17 @@
+.hackathonSectionMain {
+    @apply rounded-[64px_64px_0px_0px] lg:rounded-[104px_104px_0px_0px] bg-black lg:pt-[70px] pt-16
+    -mt-[75px] lg:-mt-[80px];
+
+    & .hackathonCountdownText {
+        @apply text-white text-center font-normal text-[20px] leading-[160%] lg:text-[24px] lg:leading-[166.667%];
+    }
+
+    & .cashPrizeText {
+        @apply text-[#FFA500] text-center font-gilroy text-[40px] lg:text-[96px] font-[800] leading-[86.155%] lg:leading-normal;
+    }
+
+    & .cashPrizeSupportingText {
+        @apply text-white text-center font-altone text-[23px] lg:text-[48px] font-medium leading-[72.941%] lg:leading-normal;
+    }
+
+}

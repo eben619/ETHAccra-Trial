@@ -1,0 +1,25 @@
+.time {
+    @apply text-[#FFA500] text-center lg:text-[48px] font-[800] lg:leading-[100%]
+    text-[40px] leading-[120%] font-gilroy;
+}
+.timeLabel {
+    @apply text-white text-center text-[23.447px] font-[500] leading-[102.361%] mt-4
+    font-altone;
+}
+
+.timeColon {
+    @apply text-[#8E8E8E] text-center text-[38.923px] font-normal leading-[120.477%]
+    font-altone;
+}
+
+@media (max-width: 344px) {
+    .time {
+        @apply text-[1.5rem];
+    }
+    .timeLabel {
+        @apply text-[1rem];
+    }
+    .timeColon {
+        @apply text-[1.7rem];
+    }
+}

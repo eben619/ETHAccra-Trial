@@ -1,0 +1,16 @@
+$largestScreen: 2000px;
+
+.sectionContainer {
+    @apply bg-[url('/assets/svgs/about_ethaccra_bg.svg')] lg:bg-[url('/assets/pngs/about_ethaccra_bg.png')] 
+    bg-no-repeat bg-cover
+    lg:h-auto min-h-screen xl:min-h-[50vh] h-auto;
+
+    @media screen and (min-width: $largestScreen) {
+        @apply xl:flex xl:items-center;
+    }
+}
+
+.mainText {
+    @apply text-[#E29200] text-center lg:text-[32px] font-medium lg:leading-[150%]
+    text-[24px] leading-[133.333%];
+}

@@ -1,0 +1,19 @@
+$largestScreen: 2000px;
+
+.sectionContainer {
+  @apply bg-[#fadced] /* Set background color */
+  lg:h-auto min-h-screen xl:min-h-[50vh] h-auto;
+
+  @media screen and (min-width: $largestScreen) {
+    @apply xl:flex xl:items-center;
+  }
+}
+
+.mainText {
+  @apply text-black text-center lg:text-[24px] font-normal lg:leading-[150%]
+  text-[18px] leading-[133.333%]; /* Slightly increased text size */
+}
+
+.largeText {
+  @apply text-[36px] lg:text-[45px] font-bold text-[#ff42ae]; /* Large, bold, pink-colored text */
+}

@@ -1,0 +1,22 @@
+.headingText {
+  @apply font-altoneBold text-[44px] font-bold text-center;
+  @apply lg:leading-[27.58px];
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+.imagesRow {
+  @apply mx-auto flex flex-col justify-center;
+  @apply md:grid md:grid-cols-3 lg:grid-cols-4;
+  @apply md:items-center md:justify-center;
+  @apply gap-[3.25rem] md:gap-[3.25rem];
+
+  .imageCol {
+    @apply block w-full;
+    @apply transition-all ease-linear;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

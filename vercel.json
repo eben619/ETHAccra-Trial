@@ -1,0 +1,14 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "2023.ethaccra.xyz"
+        }
+      ],
+      "destination": "/2023"
+    }
+  ]
+}

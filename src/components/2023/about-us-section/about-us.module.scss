@@ -1,0 +1,27 @@
+$largestScreen: 2000px;
+
+.headingText {
+    @apply font-altoneBold font-bold text-center;
+    @apply text-[2.25rem] lg:text-[2.75rem];
+    @apply leading-[3.15rem] lg:leading-[1.7238rem];
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.sectionContainer {
+    @apply h-auto xl:min-h-[50vh] lg:min-h-[auto];
+    // @apply lg:min-h-screen;
+    @apply bg-white;
+
+    @media screen and (min-width: $largestScreen) {
+        @apply xl:flex xl:items-center;
+    }
+}
+
+.mainText {
+    @apply text-black text-center font-medium;
+    @apply text-xl;
+    @apply lg:text-[1.5rem] lg:leading-[2.1rem];
+}
+
+

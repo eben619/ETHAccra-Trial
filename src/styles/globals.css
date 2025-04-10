@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face { 
+  font-family: "Sora"; 
+  src: url('../font/Sora-Regular.ttf') format('truetype'); 
+} 
+@font-face { 
+  font-family: "SoraBold"; 
+  src: url('../font/Sora-Bold.ttf') format('truetype'); 
+} 
+@font-face { 
+  font-family: "SoraExtraBold"; 
+  src: url('../font/Sora-ExtraBold.ttf') format('truetype'); 
+} 
+@font-face { 
+  font-family: "AltoneTrialRegularOblique"; 
+  src: url('../font/AltoneTrial-RegularOblique.ttf') format('truetype'); 
+} 
+  
+@font-face { 
+  font-family: "GilroyExtraBold"; 
+  src: url('../font/Gilroy-ExtraBold.otf') format('opentype'); 
+} 
+  
+@font-face { 
+  font-family: "GilroyLight"; 
+  src: url('../font/Gilroy-Light.otf') format('opentype'); 
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --sora-font: Sora;
+  --sora-bold-font: SoraBold;
+  --sora-extrabold-font: SoraExtraBold;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box !important;
+  scroll-behavior: smooth;
+  /* border: 1px solid red; */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  background: black;
+   font-family: var(--sora-bold-font);
+}
+
+.sectionText {
+  @apply text-[#4A4A4A] lg:text-[48px] font-[800] lg:leading-[100%] text-[40px] leading-[120%]
+  !font-gilroy;
+}

@@ -1,0 +1,24 @@
+.mainSection {
+    @apply bg-white lg:py-[72px]
+    px-4 py-[72px]
+    md:px-0;
+}
+
+.sectionHeaderText {
+    @apply text-[#4A4A4A] text-center lg:text-[48px] font-[800] lg:leading-[48px] 
+    text-[38px] leading-[111.111%] font-gilroy;
+    // text-[#FFA500]
+}
+
+.imagesRow {
+    @apply flex flex-col md:flex-row md:flex-wrap md:items-stretch md:justify-center gap-6 md:gap-0 md:-mx-3;
+}
+
+.imageCol {
+    @apply md:w-3/12 lg:w-4/12 md:p-3;
+}
+
+.imageCover {
+    @apply rounded bg-[#FAFAFA] py-[22px] px-[52px] md:p-4 lg:py-[22px] lg:px-[52px] w-full h-full flex items-center justify-center;
+}
+
