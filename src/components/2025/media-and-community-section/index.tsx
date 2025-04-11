@@ -189,7 +189,7 @@ const MediaAndCommunityPartnersSection = () => {
       </div>
 
       {/* Anchor for FAQ */}
-      <div id="faq"></div>
+      <div id="faqs"></div>
     </div>
   );
 };

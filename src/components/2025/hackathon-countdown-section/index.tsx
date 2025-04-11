@@ -17,7 +17,9 @@ const HackathonCountdownSection = () => {
           </p>
         </div>
       </div>
+      <div id="sponsors"></div>
     </section>
+    
   );
 };
 

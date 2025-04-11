@@ -129,7 +129,9 @@ const FaqSection: React.FC = () => {
           </div>
         ))}
       </div>
+      <div id="contact-us"></div>
     </div>
+    
   );
 };
 
