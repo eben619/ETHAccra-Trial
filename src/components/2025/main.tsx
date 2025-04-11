@@ -19,7 +19,7 @@ const EthAccra2025 = () => {
         <title>ETHAccra</title>
         <link rel="canonical" href="https://ethaccra.xyz" />
         <meta property="og:locale" content="en_US" />
-        <meta property="og:title" content="Overview - ETHAccra" />
+        <meta property="og:title" content="ETHAccra Hackathon 2025" />
         <meta
           property="og:description"
           content="ETHAccra SEPTEMBER 2025 In view of the fact that ETHAccra 2025 will be held in Accra, we want to rally the community together and support developers in Accra and Africa. This year’s event comes off on the 3rd through to 6th September, 2025, at ISSER Seminar Hall, University of Ghana, Legon."
