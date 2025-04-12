@@ -89,6 +89,16 @@ const mediaAndCommunityPartnersData = [
     name: "",
     url: "https://x.com/pyghana",
   },
+  {
+    imageUrl: "/assets/svgs/media-and-community/new/ethBucharest.svg",
+    name: "",
+    url: "https://x.com/ethbucharest_",
+  },
+  {
+    imageUrl: "/assets/svgs/media-and-community/new/swiss-conf.svg",
+    name: "",
+    url: "https://www.eda.admin.ch/accra",
+  },
 
   // {
   //   imageUrl: "/assets/pngs/web3bridge.png",
