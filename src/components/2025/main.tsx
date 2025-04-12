@@ -31,11 +31,11 @@ const EthAccra2025 = () => {
         <meta property="og:type" content="website" />
         <meta
           property="og:image"
-          content="https://github.com/eben619/ETHAccra-Trial/blob/main/public/assets/pngs/2025/metadata.PNG"
+          content="https://raw.githubusercontent.com/eben619/ETHAccra-Trial/refs/heads/main/public/assets/pngs/2025/metadata.PNG"
         />
         <meta
           property="og:image:secure_url"
-          content="https://github.com/eben619/ETHAccra-Trial/blob/main/public/assets/pngs/2025/metadata.PNG"
+          content="https://raw.githubusercontent.com/eben619/ETHAccra-Trial/refs/heads/main/public/assets/pngs/2025/metadata.PNG"
         />
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="400" />
