@@ -29,11 +29,10 @@ const AboutUsSection = () => {
           transition={{ duration: 0.3, delay: 0, ease: "easeInOut" }}
           viewport={{ once: true }}
         >
-          ETHAccra is an active and inclusive community in Ghana, West Africa,
-          bringing together developers, researchers, designers, and newcomers
-          interested in web3 and blockchain technologies. We believe that Accra
-          and its surrounding areas have the potential to be the hub for great
-          ideas and the driver of the Ethereum-driven ethos in West Africa.
+          ETHAccra brings together the pan-African blockchain community in a vibrant
+          celebration of Ethereum’s open values—sparking innovation, fostering collaboration, and
+          shaping the future of decentralized technology, from Accra to the world!
+
           <br /><br />
           <span className={styles.largeText}>
             Come for the hack. Stay for the vibes.
