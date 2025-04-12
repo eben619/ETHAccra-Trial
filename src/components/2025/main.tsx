@@ -17,7 +17,7 @@ const EthAccra2025 = () => {
     <div>
       <Head>
         <title>ETHAccra</title>
-        <link rel="canonical" href="https://ethaccra.xyz" />
+        <link rel="canonical" href="http://eth-accra-trial.vercel.app" />
         <meta property="og:locale" content="en_US" />
         <meta property="og:title" content="ETHAccra Hackathon 2025" />
         <meta
@@ -26,16 +26,16 @@ const EthAccra2025 = () => {
         />
         <meta
           property="og:url"
-          content="https://ethaccra.xyz"
+          content="http://eth-accra-trial.vercel.app"
         />
         <meta property="og:type" content="website" />
         <meta
           property="og:image"
-          content="https://eth-accra-trial.vercel.app/assets/pngs/2025/metadata.png"
+          content="https://github.com/eben619/ETHAccra-Trial/blob/main/public/assets/pngs/2025/metadata.PNG"
         />
         <meta
           property="og:image:secure_url"
-          content="https://eth-accra-trial.vercel.app/assets/pngs/2025/metadata.png"
+          content="https://github.com/eben619/ETHAccra-Trial/blob/main/public/assets/pngs/2025/metadata.PNG"
         />
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="400" />
