@@ -50,29 +50,6 @@ const Navbar = () => {
 
         <div className="flex items-center">
           <div className="hidden xl:flex gap-6 2xl:gap-10">
-            <a href="#gallery" className={styles.anchorLinks}>
-              Gallery
-            </a>
-
-            <a href="#sponsors" className={styles.anchorLinks}>
-              Sponsors
-            </a>
-
-            <a href="#speakers" className={styles.anchorLinks}>
-              Speakers
-            </a>
-
-            <a href="#media-partners" className={styles.anchorLinks}>
-              Media Partners
-            </a>
-
-            <a
-              className={styles.anchorLinks}
-              href="https://taikai.network/ethaccra/hackathons/hackathon2024"
-              target="_blank"
-            >
-              Projects
-            </a>
           </div>
 
           <div className="hidden lg:flex px-8 gap-4">

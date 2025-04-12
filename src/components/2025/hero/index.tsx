@@ -47,7 +47,7 @@ const Hero = () => {
 
               <div className={styles.buttonContainer}>
                 <a
-                  href="https://taikai.network/ethaccra/hackathons/hackathon2024"
+                  href="https://dorahacks.io/hackathon/ethaccrahackathon2025/detail"
                   target="_blank"
                   className={clsx(styles.heroButton, "mt-6")}
                 >

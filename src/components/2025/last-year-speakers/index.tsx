@@ -16,7 +16,7 @@ const LastYearSpeakers = () => {
             transition={{ duration: 0.1, delay: 0, ease: "easeInOut" }}
             viewport={{ once: true }}
           >
-            Speakers, Judges & Mentors
+            2024 Speakers, Judges & Mentors
           </motion.h1>
         </div>
 

@@ -47,7 +47,7 @@ const FaqSection: React.FC = () => {
     {
       id: "item-7",
       question: "When does the ETHAccra hackathon start?",
-      answer: "ETHAccra is a 3-day hackathon that kicks off on 28th of August with onsite, workshops and exclusive networking events to welcome our hackers.\n\nBuilding time starts officially in the morning, on the 29th of August.\n\nProjects will be submitted in the morning on the 31st of August, with the Closing Ceremony and the Afterparty to follow."
+      answer: "ETHAccra is a 3-day hackathon that kicks off on the 3rd of September with onsite, workshops and exclusive networking events to welcome our hackers.\n\nBuilding time starts officially in the morning, on the 4th of September.\n\nProjects will be submitted in the morning on the 6th of September, with the Closing Ceremony and the Afterparty to follow."
     },
     {
       id: "item-8",
@@ -67,7 +67,7 @@ const FaqSection: React.FC = () => {
     {
       id: "item-11",
       question: "I have a question that is not listed here. Who can I ask?",
-      answer: "You can reach out to the ETHAccra's team on Telegram, X or Email."
+      answer: ""
     }
   ];
 
@@ -117,7 +117,7 @@ const FaqSection: React.FC = () => {
                     {" "}
                     <a className="text-orange-500 underline" href="https://t.me/+7ClMFsYpii05NGQ0" target="_blank" rel="noopener noreferrer">Telegram</a>,
                     {" "}
-                    <a className="text-orange-500 underline" href="https://twitter.com/ETHAccra" target="_blank" rel="noopener noreferrer">X</a>
+                    <a className="text-orange-500 underline" href="https://x.com/ETHAccra" target="_blank" rel="noopener noreferrer">X</a>
                     {" "}
                     or
                     {" "}

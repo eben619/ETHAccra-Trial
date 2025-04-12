@@ -60,11 +60,6 @@ const Illustration = () => {
     };
   }, []);
 
-  // Don't render on server
-  if (!isClient) {
-    return null;
-  }
-
   return (
     <div className="relative w-screen h-screen overflow-hidden" ref={containerRef}>
       {/* Background Image */}
