@@ -13,7 +13,7 @@ import { motion } from "framer-motion";
 import {
   hackathonImages,
   slideshowImages,
-} from "@/components/2024/hackathon-images-and-sponsors/data/imageData";
+} from "@/components/2025/hackathon-images-and-sponsors/data/imageData";
 
 // Import Swiper styles
 import "swiper/css";
