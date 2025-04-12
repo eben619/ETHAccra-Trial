@@ -33,11 +33,11 @@ const EthAccra2023 = () => {
         <meta property="og:type" content="website" />
         <meta
           property="og:image"
-          content="https://raw.githubusercontent.com/eben619/ETHAccra-Trial/refs/heads/main/public/assets/pngs/2025/metadata.PNG"
+          content="http://eth-accra-website.vercel.app/assets/pngs/meta_image.png"
         />
         <meta
           property="og:image:secure_url"
-          content="https://raw.githubusercontent.com/eben619/ETHAccra-Trial/refs/heads/main/public/assets/pngs/2025/metadata.PNG"
+          content="https://eth-accra-website.vercel.app/assets/pngs/meta_image.png"
         />
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="400" />
