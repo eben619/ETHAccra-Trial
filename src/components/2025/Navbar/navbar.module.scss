@@ -154,3 +154,19 @@
 .hamburgerMenuCover {
   @apply rounded-[32px] bg-[#FF5CB9] p-3 gap-2.5;
 }
+
+.editionButton {
+  @apply inline-flex items-center rounded-[32px] px-4 py-3 h-[52px] text-white;
+  background-color: #FF5CB9;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: darken(#FF5CB9, 10%);
+    transform: translateY(-2px);
+  }
+  
+  &:active {
+    background-color: darken(#FF5CB9, 15%);
+    transform: translateY(0);
+  }
+}

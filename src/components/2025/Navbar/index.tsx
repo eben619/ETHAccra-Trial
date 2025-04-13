@@ -7,6 +7,8 @@ import clsx from "clsx";
 import useScrollNavbar from "@/hooks/useScrollNavbar";
 import CollapsibleNav from "./CollapsibleNav";
 import Link from "next/link";
+import { motion } from "framer-motion"; // Added motion import
+
 
 const Navbar = () => {
   const [openNavbar, setOpenNavbar] = useState<boolean>(false);
@@ -20,6 +22,12 @@ const Navbar = () => {
   const closeNavbarAction = () => {
     setOpenNavbar(false);
     document.body.style.overflow = "unset";
+  };
+
+  // Define animation variants for the buttons
+  const listItemVariants = {
+    hidden: { opacity: 0, y: -10 },
+    visible: { opacity: 1, y: 0 },
   };
 
   return (
@@ -53,7 +61,26 @@ const Navbar = () => {
           </div>
 
           <div className="hidden lg:flex px-8 gap-4">
-            
+            {/* Added Edition buttons here with the same styling as Become a sponsor */}
+            <motion.a
+              onClick={closeNavbarAction}
+              href="https://2024.ethaccra.xyz"
+              className={styles.editionButton}
+              variants={listItemVariants}
+              target="_blank"
+            >
+              2024 Edition
+            </motion.a>
+
+            <motion.a
+              onClick={closeNavbarAction}
+              href="https://2024.ethaccra.xyz/2023"
+              className={styles.editionButton}
+              variants={listItemVariants}
+              target="_blank"
+            >
+              2023 Edition
+            </motion.a>
           </div>
 
           <button

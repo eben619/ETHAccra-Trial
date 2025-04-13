@@ -158,16 +158,17 @@ const CollapsibleNav = ({
                     variants={listItemVariants}
                     target="_blank"
                   >
-                    Last Edition
+                    2024 Edition
                   </motion.a>
 
                   <motion.a
                     onClick={closeNavbarAction}
-                    href="#about-us"
+                    href="https://2024.ethaccra.xyz/2023"
                     className={styles.navLinks}
                     variants={listItemVariants}
+                    target="_blank"
                   >
-                    About
+                    2023 Edition
                   </motion.a>
                 </div>
 
