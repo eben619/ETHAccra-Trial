@@ -4,6 +4,7 @@ import Navbar from "../Navbar";
 import { useEffect, useRef, useState } from "react";
 import styles from "./illustration.module.scss";
 import { debounce } from 'lodash';
+import { ChevronDown } from 'lucide-react';
 
 // Type for our firefly objects
 interface Firefly {
@@ -73,7 +74,7 @@ const Illustration = () => {
 
       {/* Fireflies Container */}
       <div className={styles.firefliesContainer}>
-        {fireflies.map((firefly) => (
+        {isClient && fireflies.map((firefly) => (
           <div
             key={firefly.id}
             className={styles.firefly}
@@ -87,6 +88,12 @@ const Illustration = () => {
             } as CustomCSSProperties}
           />
         ))}
+      </div>
+      
+      {/* Down Arrow and Text in a column layout */}
+      <div className="absolute bottom-8 w-full flex flex-col items-center z-10">
+        <ChevronDown size={48} color="#ff5cb9" strokeWidth={3} className="animate-bounce mb-2" />
+        <p className="text-center font-medium bg-white px-4 py-2 rounded-full" style={{ color: "#ff5cb9" }}>Scroll Down To Learn More</p>
       </div>
 
       {/* Navbar */}

@@ -5,7 +5,7 @@
       "has": [
         {
           "type": "host",
-          "value": "2025.ethaccra.xyz"
+          "value": "eth-accra-trial.vercel.app"
         }
       ],
       "destination": "/2025"

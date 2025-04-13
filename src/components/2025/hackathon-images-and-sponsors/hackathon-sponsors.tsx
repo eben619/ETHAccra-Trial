@@ -7,7 +7,7 @@ import { goldSponsors, platinumSponsors, silverSponsors, supporters } from "./da
 
 const HackathonSponsors = () => {
   return (
-    <div className={styles.sponsorsContainer}>
+    <div className="bg-[#ffe9c9] md:px-[30px]">
       <div className="py-[72px]">
         <div className="md:w-full px-6 lg:px-0">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
@@ -28,7 +28,6 @@ const HackathonSponsors = () => {
             BECOME A SPONSOR
           </a>
         </div>
-
           <div className="mt-16"></div>
 
           <div role="divider" className="mt-[72px]"></div>
