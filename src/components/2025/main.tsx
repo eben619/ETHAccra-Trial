@@ -22,7 +22,7 @@ const EthAccra2025 = () => {
         <meta property="og:title" content="ETHAccra Hackathon 2025" />
         <meta
           property="og:description"
-          content="ETHAccra SEPTEMBER 2025 In view of the fact that ETHAccra 2025 will be held in Accra, we want to rally the community together and support developers in Accra and Africa. This year’s event comes off on the 3rd through to 6th September, 2025, at ISSER Seminar Hall, University of Ghana, Legon."
+          content="ETHAccra 2025 will be held in Accra. This year’s event comes off on the 3rd through to 6th September, 2025, at ISSER Seminar Hall, University of Ghana, Legon."
         />
         <meta
           property="og:url"
