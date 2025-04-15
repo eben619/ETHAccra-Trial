@@ -16,7 +16,7 @@ const Hero = () => {
   if (isLoading) return null;
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div id="hero-section" className="relative w-full h-screen overflow-hidden">
       <Image
         alt="background"
         src="/assets/pngs/2025/Background.png"

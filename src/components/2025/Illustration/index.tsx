@@ -33,7 +33,7 @@ const Illustration = () => {
       if (!containerRef.current) return;
 
       const newFireflies: Firefly[] = [];
-      const fireflyCount = 50;
+      const fireflyCount = 10; // Reduced from 50 to 10
       const { offsetWidth: width, offsetHeight: height } = containerRef.current;
 
       for (let i = 0; i < fireflyCount; i++) {
@@ -60,6 +60,23 @@ const Illustration = () => {
       handleResize.cancel();
     };
   }, []);
+
+  // Scroll to the hero section
+  const scrollToHero = () => {
+    const heroSection = document.getElementById('hero-section');
+    if (heroSection) {
+      heroSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    } else {
+      // If there's no specific ID, just scroll one viewport height
+      window.scrollTo({
+        top: window.innerHeight,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   return (
     <div className="relative w-screen h-screen overflow-hidden" ref={containerRef}>
@@ -90,10 +107,15 @@ const Illustration = () => {
         ))}
       </div>
       
-      {/* Down Arrow and Text in a column layout */}
-      <div className="absolute bottom-8 w-full flex flex-col items-center z-10">
+      {/* Down Arrow and Text in a column layout - now clickable */}
+      <div 
+        className="absolute bottom-8 w-full flex flex-col items-center z-10 cursor-pointer" 
+        onClick={scrollToHero}
+      >
         <ChevronDown size={48} color="#ff5cb9" strokeWidth={3} className="animate-bounce mb-2" />
-        <p className="text-center font-medium bg-white px-4 py-2 rounded-full" style={{ color: "#ff5cb9" }}>Scroll Down To Learn More</p>
+        <p className="text-center font-medium bg-white px-4 py-2 rounded-full" style={{ color: "#ff5cb9" }}>
+          Scroll Down To Learn More
+        </p>
       </div>
 
       {/* Navbar */}

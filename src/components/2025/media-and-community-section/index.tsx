@@ -156,7 +156,7 @@ const MediaAndCommunityPartnersSection = () => {
   return (
     <div className={styles.mainSection}>
       <div className="md:mx-auto md:w-8/12">
-        <div className="mb-[56px]">
+        <div className="mb-[60px]">
           <motion.h1
             className={styles.sectionHeaderText}
             initial={{ opacity: 0 }}
@@ -164,7 +164,7 @@ const MediaAndCommunityPartnersSection = () => {
             transition={{ duration: 0.3, delay: 0, ease: "easeInOut" }}
             viewport={{ once: true }}
           >
-            2025 Media & Community Partners
+            2025 Community & Media Partners
           </motion.h1>
         </div>
 

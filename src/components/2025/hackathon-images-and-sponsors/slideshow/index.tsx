@@ -43,7 +43,7 @@ const HackathonImagesSlide = () => {
   }, [allImages]);
 
   return (
-    <div className="px-4 md:px-0 relative">
+    <div className="px-4 md:px-0 relative" style={{ zIndex: 5 }}>
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -84,10 +84,10 @@ const HackathonImagesSlide = () => {
             ))}
           </Swiper>
 
-          {/* Left arrow - positioned within the image boundaries */}
+          {/* Left arrow - positioned with higher z-index to appear above navbar */}
           <div
             className={clsx(
-              "absolute left-2 top-1/2 z-10 -translate-y-1/2 cursor-pointer bg-pink-500 md:bg-pink-500 rounded-full w-8 h-8 md:w-12 md:h-12 flex items-center justify-center shadow-lg",
+              "absolute left-2 top-1/2 z-20 -translate-y-1/2 cursor-pointer bg-pink-500 md:bg-pink-500 rounded-full w-8 h-8 md:w-12 md:h-12 flex items-center justify-center shadow-lg",
               { "opacity-50": currentIndex === 0 }
             )}
             onClick={() => slidePrev()}
@@ -97,10 +97,10 @@ const HackathonImagesSlide = () => {
             </svg>
           </div>
 
-          {/* Right arrow - positioned within the image boundaries */}
+          {/* Right arrow - positioned with higher z-index to appear above navbar */}
           <div
             className={clsx(
-              "absolute top-1/2 right-2 -translate-y-1/2 z-10 cursor-pointer bg-pink-500 md:bg-pink-500 rounded-full w-8 h-8 md:w-12 md:h-12 flex items-center justify-center shadow-lg",
+              "absolute top-1/2 right-2 -translate-y-1/2 z-20 cursor-pointer bg-pink-500 md:bg-pink-500 rounded-full w-8 h-8 md:w-12 md:h-12 flex items-center justify-center shadow-lg",
               { "opacity-50": currentIndex === totalSlides - 1 }
             )}
             onClick={() => slideNext()}

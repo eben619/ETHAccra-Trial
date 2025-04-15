@@ -8,6 +8,7 @@ import { goldSponsors, platinumSponsors, silverSponsors, supporters } from "./da
 const HackathonSponsors = () => {
   return (
     <div className="bg-[#ffe9c9] md:px-[30px]">
+      <div id="sponsors"></div>
       <div className="py-[72px]">
         <div className="md:w-full px-6 lg:px-0">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
@@ -226,10 +227,9 @@ const HackathonSponsors = () => {
                 })}
             </div>
           </div>
-
-          <div id="about-us"></div>
         </div>
       </div>
+      <div id="about-us"></div>
     </div>
   );
 };
