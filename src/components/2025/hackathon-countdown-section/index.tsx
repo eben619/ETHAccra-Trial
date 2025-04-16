@@ -16,11 +16,12 @@ const HackathonCountdownSection = () => {
               <span><br/>Through events, workshops, and a strong network, ETHAccra is building a vibrant ecosystem that supports
                 new ideas and collaboration.</span><br/>Join us as we work towards a more inclusive and decentralized future.
             </p>
+            <div id="sponsors"></div>
           </div>
         </div>
       </section>
-      <div id="sponsors"></div>
     </>
+    
   );
 };
 

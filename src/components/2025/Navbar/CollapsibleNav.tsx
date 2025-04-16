@@ -97,6 +97,14 @@ const CollapsibleNav = ({
 
               <div className="mt-16 h-full w-full">
                 <div className="flex flex-col gap-10">
+                <motion.a
+                    variants={listItemVariants}
+                    onClick={closeNavbarAction}
+                    href="#about-us"
+                    className={styles.anchorLinks}
+                  >
+                    About
+                  </motion.a>
                   <motion.a
                     variants={listItemVariants}
                     onClick={closeNavbarAction}
@@ -127,23 +135,21 @@ const CollapsibleNav = ({
                   <motion.a
                     variants={listItemVariants}
                     onClick={closeNavbarAction}
-                    href="#media-partners"
-                    className={styles.anchorLinks}
-                  >
-                    Media Partners
-                  </motion.a>
-
-                  <motion.a
-                    variants={listItemVariants}
-                    onClick={closeNavbarAction}
                     href="https://taikai.network/ethaccra/hackathons/hackathon2024"
                     target="_blank"
                     className={styles.anchorLinks}
                   >
                     Projects
                   </motion.a>
+                  <motion.a
+                    variants={listItemVariants}
+                    onClick={closeNavbarAction}
+                    href="#media-partners"
+                    className={styles.anchorLinks}
+                  >
+                   Community & Media Partners
+                  </motion.a>
                 </div>
-
                 <div className="mt-16 flex flex-col gap-10">
                   <motion.div
                     onClick={closeNavbarAction}

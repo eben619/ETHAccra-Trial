@@ -5,7 +5,10 @@ import { motion } from "framer-motion";
 const AboutUsSection = () => {
   return (
     <div className={styles.sectionContainer}>
-      <div className="mx-auto lg:px-[188px] lg:pt-[72px] lg:pb-[32px] px-4 pt-[72px] pb-[32px]">
+      <h2 className="text-4xl md:text-6xl font-bold text-left pt-10 pl-10" style={{ color: "#0d0801" }} >
+            About
+      </h2><br />
+      <div className="mx-auto lg:px-[188px] lg:pt-[72px] lg:pb-[32px] px-4 pt-[30px] pb-[32px]">
         <motion.div
           className="mx-auto max-w-[349px] max-h-[358px] py-[42px] mb-8"
           initial={{ y: 100 }}

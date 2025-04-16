@@ -9,7 +9,7 @@ import clsx from "clsx";
 const HackathonImages = () => {
   return (
     <>
-    <div id="gallery" className="bg-white md:px-[60px]">
+    <div className="bg-white md:px-[60px]">
       <div className="pt-[72px] pb-[72px] md:pt-[72px] md:pb-[120px]">
       <h2 className="text-5xl md:text-6xl font-bold text-left" style={{ color: "#0d0801" }}>
             Gallery
