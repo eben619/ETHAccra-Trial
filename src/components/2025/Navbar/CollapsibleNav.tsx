@@ -2,10 +2,9 @@
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import React from "react";
-import EthAccraButton from "@/components/design-system/button/button";
 import styles from "./navbar.module.scss";
 import clsx from "clsx";
-import Link from "next/link";
+
 
 type CollapsibleNavProps = {
   navbarState: boolean;

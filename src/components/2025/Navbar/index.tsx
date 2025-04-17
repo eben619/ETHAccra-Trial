@@ -1,7 +1,6 @@
 'use client';
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import EthAccraButton from "@/components/design-system/button/button";
 import styles from "./navbar.module.scss";
 import clsx from "clsx";
 import useScrollNavbar from "@/hooks/useScrollNavbar";
