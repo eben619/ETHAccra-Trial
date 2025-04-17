@@ -61,20 +61,48 @@ const Illustration = () => {
     };
   }, []);
 
-  // Scroll to the hero section
+  // Custom smooth scroll function with 2 second duration
+  const smoothScroll = (targetPosition: number, duration: number = 2000) => {
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    let startTime: number | null = null;
+
+    // Easing function for smooth acceleration and deceleration
+    function easeInOutCubic(t: number): number {
+      return t < 0.5 
+        ? 4 * t * t * t 
+        : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    }
+
+    function animation(currentTime: number) {
+      if (startTime === null) startTime = currentTime;
+      const timeElapsed = currentTime - startTime;
+      const progress = Math.min(timeElapsed / duration, 1);
+      const easedProgress = easeInOutCubic(progress);
+      
+      window.scrollTo(0, startPosition + distance * easedProgress);
+      
+      if (timeElapsed < duration) {
+        requestAnimationFrame(animation);
+      }
+    }
+    
+    requestAnimationFrame(animation);
+  };
+
+  // Scroll to the hero section with 2-second smooth scroll
   const scrollToHero = () => {
     const heroSection = document.getElementById('hero-section');
     if (heroSection) {
-      heroSection.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
+      // Get the position of the hero section relative to the document
+      const heroPosition = heroSection.getBoundingClientRect().top + window.pageYOffset;
+      
+      // Apply our custom smooth scroll
+      smoothScroll(heroPosition);
     } else {
       // If there's no specific ID, just scroll one viewport height
-      window.scrollTo({
-        top: window.innerHeight,
-        behavior: 'smooth'
-      });
+      const targetPosition = window.innerHeight;
+      smoothScroll(targetPosition);
     }
   };
 
@@ -107,9 +135,9 @@ const Illustration = () => {
         ))}
       </div>
       
-      {/* Down Arrow and Text in a column layout - now clickable */}
+      {/* Down Arrow and Text in a column layout - now clickable with custom smooth scroll */}
       <div 
-        className="absolute bottom-8 w-full flex flex-col items-center z-10 cursor-pointer" 
+        className="absolute bottom-8 w-full flex flex-col items-center z-10 cursor-pointer hover:opacity-80 transition-opacity" 
         onClick={scrollToHero}
       >
         <ChevronDown size={48} color="#ff5cb9" strokeWidth={3} className="animate-bounce mb-2" />
