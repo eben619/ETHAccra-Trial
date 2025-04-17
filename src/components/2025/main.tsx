@@ -15,7 +15,7 @@ import HackathonImages from "@/components/2025/hackathon-images-and-sponsors/hac
 const EthAccra2025 = () => {
   const description = "ETHAccra 2025 will be held in Accra. This year's event comes off on the 3rd through to 6th September, 2025, at ISSER Seminar Hall, University of Ghana, Legon.";
   const title = "ETHAccra Hackathon 2025";
-  const url = "http://eth-accra-trial.vercel.app";
+  const url = "http://ethaccra.xyz";
   const imageUrl = "https://eth-accra-trial.vercel.app/assets/pngs/meta_image.png";
   const siteName = "ETHAccra";
 
