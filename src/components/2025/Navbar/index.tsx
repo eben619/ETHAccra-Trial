@@ -26,15 +26,46 @@ const Navbar = () => {
     document.body.style.overflow = "unset";
   };
 
-  // Function to handle smooth scrolling to sections
+  // Custom smooth scroll function with 2 second duration
+  const smoothScroll = (targetPosition: number, duration: number = 2000) => {
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    let startTime: number | null = null;
+
+    // Easing function for smooth acceleration and deceleration
+    function easeInOutCubic(t: number): number {
+      return t < 0.5 
+        ? 4 * t * t * t 
+        : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    }
+
+    function animation(currentTime: number) {
+      if (startTime === null) startTime = currentTime;
+      const timeElapsed = currentTime - startTime;
+      const progress = Math.min(timeElapsed / duration, 1);
+      const easedProgress = easeInOutCubic(progress);
+      
+      window.scrollTo(0, startPosition + distance * easedProgress);
+      
+      if (timeElapsed < duration) {
+        requestAnimationFrame(animation);
+      }
+    }
+    
+    requestAnimationFrame(animation);
+  };
+
+  // Function to handle smooth scrolling to sections with 2s duration
   const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
     if (section) {
-      section.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
+      // Get the position of the section relative to the document
+      const sectionPosition = section.getBoundingClientRect().top + window.pageYOffset;
+      
+      // Apply our custom smooth scroll
+      smoothScroll(sectionPosition);
     }
+    
     // Close mobile navbar if open
     if (openNavbar) {
       closeNavbarAction();
@@ -89,7 +120,7 @@ const Navbar = () => {
 
         <div className="flex items-center">
           <div className="hidden xl:flex gap-12 mr-8 items-center">
-            {/* Added new navigation links with increased spacing and scroll functionality */}
+            {/* Navigation links with smooth scroll functionality */}
             <button 
               onClick={() => scrollToSection('about-us')}
               className="text-lg font-medium cursor-pointer hover:opacity-80 transition-opacity" 

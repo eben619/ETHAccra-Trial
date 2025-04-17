@@ -46,6 +46,57 @@ const CollapsibleNav = ({
     },
   };
 
+  // Custom smooth scroll function with 2 second duration
+  const smoothScroll = (targetPosition: number, duration: number = 2000) => {
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    let startTime: number | null = null;
+
+    // Easing function for smooth acceleration and deceleration
+    function easeInOutCubic(t: number): number {
+      return t < 0.5 
+        ? 4 * t * t * t 
+        : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    }
+
+    function animation(currentTime: number) {
+      if (startTime === null) startTime = currentTime;
+      const timeElapsed = currentTime - startTime;
+      const progress = Math.min(timeElapsed / duration, 1);
+      const easedProgress = easeInOutCubic(progress);
+      
+      window.scrollTo(0, startPosition + distance * easedProgress);
+      
+      if (timeElapsed < duration) {
+        requestAnimationFrame(animation);
+      }
+    }
+    
+    requestAnimationFrame(animation);
+  };
+
+  // Function to handle smooth scrolling to sections
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    const section = document.getElementById(id);
+    
+    if (section) {
+      // Get the position of the section relative to the document
+      const sectionPosition = section.getBoundingClientRect().top + window.pageYOffset;
+      
+      // Close mobile navbar first
+      closeNavbarAction();
+      
+      // Apply our custom smooth scroll with a slight delay to allow the menu to close
+      setTimeout(() => {
+        smoothScroll(sectionPosition);
+      }, 100);
+    } else {
+      // If section not found, just close the navbar
+      closeNavbarAction();
+    }
+  };
+
   return (
     <>
       <AnimatePresence>
@@ -97,9 +148,9 @@ const CollapsibleNav = ({
 
               <div className="mt-16 h-full w-full">
                 <div className="flex flex-col gap-10">
-                <motion.a
+                  <motion.a
                     variants={listItemVariants}
-                    onClick={closeNavbarAction}
+                    onClick={(e) => scrollToSection(e, 'about-us')}
                     href="#about-us"
                     className={styles.anchorLinks}
                   >
@@ -107,7 +158,7 @@ const CollapsibleNav = ({
                   </motion.a>
                   <motion.a
                     variants={listItemVariants}
-                    onClick={closeNavbarAction}
+                    onClick={(e) => scrollToSection(e, 'gallery')}
                     href="#gallery"
                     className={styles.anchorLinks}
                   >
@@ -116,7 +167,7 @@ const CollapsibleNav = ({
 
                   <motion.a
                     variants={listItemVariants}
-                    onClick={closeNavbarAction}
+                    onClick={(e) => scrollToSection(e, 'sponsors')}
                     href="#sponsors"
                     className={styles.anchorLinks}
                   >
@@ -125,7 +176,7 @@ const CollapsibleNav = ({
 
                   <motion.a
                     variants={listItemVariants}
-                    onClick={closeNavbarAction}
+                    onClick={(e) => scrollToSection(e, 'speakers')}
                     href="#speakers"
                     className={styles.anchorLinks}
                   >
@@ -143,7 +194,7 @@ const CollapsibleNav = ({
                   </motion.a>
                   <motion.a
                     variants={listItemVariants}
-                    onClick={closeNavbarAction}
+                    onClick={(e) => scrollToSection(e, 'media-partners')}
                     href="#media-partners"
                     className={styles.anchorLinks}
                   >
